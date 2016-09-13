@@ -66,7 +66,7 @@ function __construct()
     {
         if (empty($id) && empty($status))
         {
-            $query = "SELECT * FROM `ebay_dump` WHERE `listing_status` == 'Active'";
+            $query = "SELECT * FROM `ebay_dump` WHERE `listing_status` = 'Active'";
             if($stmt = mysqli_prepare($this->Database, $query))
             {
                 mysqli_stmt_execute($stmt);
@@ -388,7 +388,7 @@ function __construct()
     public function ebay_dump($ebay_id, $title, $description, $listing_status, $current_price, $quant, $image_1, $image_2, $image_3, $image_4, $image_5, $image_6, $image_7, $image_8, $image_9, $image_10, $image_11, $image_12)
     {   
 
-        $stmt = $this->Database->prepare("INSERT INTO `ebay_dump` (`ebay_id`, `title`, `description`, `listing_status`, `current_price`, `quant`, `image_1`, `image_2`, `image_3`, `image_4`, `image_5`, `image_6`, `image_7`, `image_8`, `image_9`, `image_10`, `image_11`, `image_12`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); //prepare main query
+        $stmt = $this->Database->prepare("INSERT IGNORE INTO `ebay_dump` (`ebay_id`, `title`, `description`, `listing_status`, `current_price`, `quant`, `image_1`, `image_2`, `image_3`, `image_4`, `image_5`, `image_6`, `image_7`, `image_8`, `image_9`, `image_10`, `image_11`, `image_12`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); //prepare main query
                     
         $stmt->bind_param('ssssssssssssssssss', $ebay_id, $title, $description, $listing_status, $current_price, $quant, $image_1, $image_2, $image_3, $image_4, $image_5, $image_6, $image_7, $image_8, $image_9, $image_10, $image_11, $image_12);
 

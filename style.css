@@ -4578,7 +4578,7 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay { display: no
 
 .portfolio-ajax-modal { width: 1000px !important; }
 
-.modal-padding { padding: 40px; }
+.modal-padding { padding: 40px; background-color: #fcfcfc;}
 
 .ajax-modal-title {
 	background-color: #F9F9F9;
@@ -4588,7 +4588,7 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay { display: no
 
 .ajax-modal-title h2 {
 	font-size: 20px;
-	margin-bottom: 0;
+	margin-bottom: 0px;
 }
 
 
@@ -5682,7 +5682,14 @@ p.wp-caption-text {
 .product-image {
 	position: relative;
 	width: 100%;
-	height: auto;
+	min-height: 202px;
+	max-height: 202px;
+	overflow: hidden;
+}
+
+.product-image1 {
+	position: relative;
+	width: 100%;
 	overflow: hidden;
 }
 
@@ -5718,7 +5725,7 @@ body:not(.device-touch):not(.device-xs):not(.device-xxs) .product-image > a {
 	font-size: 14px;
 }
 
-.product-title { margin-bottom: 7px; }
+.product-title { margin-bottom: 7px; min-height: 65px;}
 
 .product-title h3 {
 	margin: 0;
@@ -5957,6 +5964,7 @@ body:not(.device-touch):not(.device-xs):not(.device-xxs) .product-overlay a {
 .quantity {
 	float: left;
 	margin-right: 30px;
+	margin-bottom: 10px;
 }
 
 .quantity .qty {

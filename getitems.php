@@ -18,7 +18,7 @@ $username = 'woodhouseautomotiveltd';
 
 $date= date_create();
 $timestamp = date_timestamp_get($date);
-date_sub($date,date_interval_create_from_date_string("115 days"));
+date_sub($date,date_interval_create_from_date_string("120 days"));
 $startfrom = date_format($date,"Y-m-d");
 
 $date= date_create();
@@ -131,7 +131,7 @@ foreach ($resultXmlData->ItemArray->Item as $item) {
  $no = 1;
 foreach ($item->PictureDetails->PictureURL as $picture) {
 	
-	${'image_' . $no} = 'img src="'.$picture; 
+	${'image_' . $no} = $picture; 
 
     $no++;
 
